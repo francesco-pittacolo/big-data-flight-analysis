@@ -1,6 +1,6 @@
 # Big Data Flight Analysis
 
-Progetto di analisi Big Data su dati di voli (2024) tramite pipeline distribuite con **Apache Spark** e **Apache Hive**, con supporto all'esecuzione sia locale (HDFS) che su cluster AWS (S3 + EMR).
+Progetto di analisi Big Data su dati di voli basato su **Apache Spark** e **Apache Hive**, con supporto all'esecuzione sia locale (HDFS) che su cluster AWS (S3 + EMR).
 
 ---
 
