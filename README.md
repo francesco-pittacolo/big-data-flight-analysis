@@ -104,6 +104,7 @@ big-data-flight-analysis/
 │
 ├── data/                              # Dataset locali (non versionati)
 ├── requirements.txt
+├── technical_report.pdf
 └── .gitignore
 ```
 
