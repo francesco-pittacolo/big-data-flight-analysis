@@ -54,6 +54,12 @@ Il nome del bucket S3 è definito come variabile `S3_BUCKET` (o `BUCKET`) in tut
 ```bash
 S3_BUCKET="big-data-2026-project"  # modificare se necessario
 ```
+## Dataset
+
+Il dataset sorgente è `flight_data_2024.csv`, contenente dati di voli negli USA per l'anno 2024. Le colonne principali includono `op_unique_carrier`, `origin`, `dest`, `month`, `arr_delay`, `dep_delay`, `cancelled`, `diverted` e codici di cancellazione.
+
+> **Il dataset non è incluso nella repository** a causa delle sue dimensioni (1.2 GB). Va scaricato manualmente da Kaggle e posizionato in `data/flight_data_2024.csv`:
+> [https://www.kaggle.com/datasets/hrishitpatil/flight-data-2024](https://www.kaggle.com/datasets/hrishitpatil/flight-data-2024)
 
 ---
 
@@ -110,12 +116,6 @@ big-data-flight-analysis/
 
 ---
 
-## Dataset
-
-Il dataset sorgente è `flight_data_2024.csv`, contenente dati di voli negli USA per l'anno 2024. Le colonne principali includono `op_unique_carrier`, `origin`, `dest`, `month`, `arr_delay`, `dep_delay`, `cancelled`, `diverted` e codici di cancellazione.
-
-> **Il dataset non è incluso nella repository** a causa delle sue dimensioni (1.2 GB). Va scaricato manualmente da Kaggle e posizionato in `data/flight_data_2024.csv`:
-> [https://www.kaggle.com/datasets/hrishitpatil/flight-data-2024](https://www.kaggle.com/datasets/hrishitpatil/flight-data-2024)
 
 ### Path dataset pulito
 
