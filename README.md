@@ -116,6 +116,23 @@ big-data-flight-analysis/
 
 ---
 
+## Preprocessing
+
+Lo script `preprocessing.py` legge il CSV grezzo, esegue la pulizia dei dati e produce versioni del dataset scalate in formato Parquet.
+
+### Esecuzione
+
+**Locale:**
+```bash
+python src/preprocessing/preprocessing.py
+```
+
+**Cluster:**
+```bash
+python src/preprocessing/preprocessing.py -c
+```
+
+---
 
 ### Path dataset pulito
 
@@ -139,24 +156,6 @@ s3a://big-data-2026-project/data/processed/flights_cleaned_<SIZE>.parquet
 | `100`    | Dataset completo (1×) |
 | `200`    | Dataset replicato 2× |
 | `400`    | Dataset replicato 4× |
-
----
-
-## Preprocessing
-
-Lo script `preprocessing.py` legge il CSV grezzo, esegue la pulizia dei dati e produce versioni del dataset scalate in formato Parquet.
-
-### Esecuzione
-
-**Locale:**
-```bash
-python src/preprocessing/preprocessing.py
-```
-
-**Cluster:**
-```bash
-python src/preprocessing/preprocessing.py -c
-```
 
 ---
 
