@@ -38,7 +38,7 @@ pip install -r requirements.txt
 ### Tecnologie
 
 - Python 3.x
-- Java 11 (richiesto da Hadoop e Hive)
+- Java 11
 - Apache Spark 3.5.8 / PySpark 3.5.8
 - Apache Hive
 - Hadoop HDFS
@@ -260,15 +260,16 @@ schematool -dbType derby -initSchema
 
 ### Esecuzione Hive
 
+**Tutti i task in sequenza — Locale:**
+```bash
+./scripts/run_all_hive.sh
+```
+
 **Singolo task — Locale:**
 ```bash
 ./scripts/run_hive.sh -t 3_1 -s 100
 ```
 
-**Tutti i task in sequenza — Locale:**
-```bash
-./scripts/run_all_hive.sh
-```
 
 **Cluster:**
 
@@ -276,21 +277,21 @@ schematool -dbType derby -initSchema
 2. Caricare i file su S3 se non è già stato fatto (vedi [Upload su AWS S3](#upload-su-aws-s3))
 3. Copiare lo script dalla macchina:
 ```bash
-aws s3 cp s3://big-data-2026-project/scripts/run_hive.sh .
-# oppure per eseguire tutti i task:
 aws s3 cp s3://big-data-2026-project/scripts/run_all_hive.sh .
+# oppure per eseguire una sola task:
+aws s3 cp s3://big-data-2026-project/scripts/run_hive.sh .
 ```
 4. Renderlo eseguibile:
 ```bash
-chmod +x run_hive.sh
-# oppure:
 chmod +x run_all_hive.sh
+# oppure:
+chmod +x run_hive.sh
 ```
 5. Eseguirlo:
 ```bash
-./run_hive.sh -c -t 3_1 -s 100
-# oppure per tutti i task:
 ./run_all_hive.sh -c
+# oppure per una specifica task:
+./run_hive.sh -c -t 3_1 -s 100
 ```
 
 I task disponibili sono `3_1`, `3_2`, `3_3`.
