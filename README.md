@@ -367,6 +367,22 @@ python upload_to_s3/upload_all.py
 
 Il bucket di destinazione è `big-data-2026-project`.
 
+## Spark History Server
+
+Per visualizzare l'interfaccia web con i dettagli delle esecuzioni Spark:
+
+**Locale:**
+```bash
+$SPARK_HOME/sbin/start-history-server.sh
+```
+Accessibile su [http://localhost:18080](http://localhost:18080).
+
+**Cluster:** eseguire un tunnel SSH dal proprio terminale locale sostituendo l'indirizzo del nodo master e la propria chiave privata:
+```bash
+ssh -i your_key.pem -L 18081:localhost:18080 hadoop@<master-node-address>
+```
+Accessibile su [http://localhost:18081](http://localhost:18081).
+
 ## Relazione tecnica
 
 Nella root della repository è disponibile una relazione tecnica che descrive in dettaglio le scelte implementative, i risultati e le considerazioni sul progetto:
@@ -374,3 +390,4 @@ Nella root della repository è disponibile una relazione tecnica che descrive in
 ```
 technical_report.pdf
 ```
+
