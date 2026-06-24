@@ -1,0 +1,45 @@
+26/06/24 08:55:47 WARN Utils: Your hostname, ubuntu resolves to a loopback address: 127.0.1.1; using 10.10.1.112 instead (on interface enp6s0)
+26/06/24 08:55:47 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+26/06/24 08:55:47 INFO SparkContext: Running Spark version 3.5.8
+26/06/24 08:55:47 INFO SparkContext: OS info Linux, 6.17.0-14-generic, amd64
+26/06/24 08:55:47 INFO SparkContext: Java version 11.0.30
+26/06/24 08:55:47 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/06/24 08:55:47 INFO ResourceUtils: ==============================================================
+26/06/24 08:55:47 INFO ResourceUtils: No custom resources configured for spark.driver.
+26/06/24 08:55:47 INFO ResourceUtils: ==============================================================
+26/06/24 08:55:47 INFO SparkContext: Submitted application: 3_2_spark_core_100
+26/06/24 08:55:47 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+26/06/24 08:55:47 INFO ResourceProfile: Limiting resource is cpu
+26/06/24 08:55:47 INFO ResourceProfileManager: Added ResourceProfile id: 0
+26/06/24 08:55:47 INFO SecurityManager: Changing view acls to: ubuntu
+26/06/24 08:55:47 INFO SecurityManager: Changing modify acls to: ubuntu
+26/06/24 08:55:47 INFO SecurityManager: Changing view acls groups to: 
+26/06/24 08:55:47 INFO SecurityManager: Changing modify acls groups to: 
+26/06/24 08:55:47 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: ubuntu; groups with view permissions: EMPTY; users with modify permissions: ubuntu; groups with modify permissions: EMPTY
+26/06/24 08:55:48 INFO Utils: Successfully started service 'sparkDriver' on port 35263.
+26/06/24 08:55:48 INFO SparkEnv: Registering MapOutputTracker
+26/06/24 08:55:48 INFO SparkEnv: Registering BlockManagerMaster
+26/06/24 08:55:48 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+26/06/24 08:55:48 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/06/24 08:55:48 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/06/24 08:55:48 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-4362e93f-6672-47d1-8dfd-869ebf72aa00
+26/06/24 08:55:48 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+26/06/24 08:55:48 INFO SparkEnv: Registering OutputCommitCoordinator
+26/06/24 08:55:48 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+26/06/24 08:55:48 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+26/06/24 08:55:48 INFO Executor: Starting executor ID driver on host 10.10.1.112
+26/06/24 08:55:48 INFO Executor: OS info Linux, 6.17.0-14-generic, amd64
+26/06/24 08:55:48 INFO Executor: Java version 11.0.30
+26/06/24 08:55:48 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+26/06/24 08:55:48 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@75c86883 for default.
+26/06/24 08:55:48 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 38623.
+26/06/24 08:55:48 INFO NettyBlockTransferService: Server created on 10.10.1.112:38623
+26/06/24 08:55:48 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+26/06/24 08:55:48 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 10.10.1.112, 38623, None)
+26/06/24 08:55:48 INFO BlockManagerMasterEndpoint: Registering block manager 10.10.1.112:38623 with 434.4 MiB RAM, BlockManagerId(driver, 10.10.1.112, 38623, None)
+26/06/24 08:55:48 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 10.10.1.112, 38623, None)
+26/06/24 08:55:48 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 10.10.1.112, 38623, None)
+26/06/24 08:55:48 INFO SingleEventLogFileWriter: Logging events to file:/tmp/spark-events/local-1782291348282.inprogress
+Dataset size: 100%
+Execution time: 25.881s
+TIME=29.43 sec

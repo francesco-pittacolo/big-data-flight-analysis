@@ -1,0 +1,10 @@
+# Python virtual env
+venv/
+
+# Hive local metastore
+metastore_db/
+
+# Hive derby logs
+derby_log
+derby_log/
+derby.log

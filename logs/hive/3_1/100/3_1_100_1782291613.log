@@ -1,0 +1,61 @@
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/home/ubuntu/apache-hive-2.3.9-bin/lib/log4j-slf4j-impl-2.6.2.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/home/ubuntu/hadoop-3.4.1/share/hadoop/common/lib/slf4j-reload4j-1.7.36.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+
+Logging initialized using configuration in jar:file:/home/ubuntu/apache-hive-2.3.9-bin/lib/hive-common-2.3.9.jar!/hive-log4j2.properties Async: true
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.hadoop.hive.common.StringInternUtils (file:/home/ubuntu/apache-hive-2.3.9-bin/lib/hive-common-2.3.9.jar) to field java.net.URI.string
+WARNING: Please consider reporting this to the maintainers of org.apache.hadoop.hive.common.StringInternUtils
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+OK
+Time taken: 1.975 seconds
+OK
+Time taken: 0.011 seconds
+OK
+Time taken: 0.033 seconds
+OK
+Time taken: 0.011 seconds
+OK
+Time taken: 0.141 seconds
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ubuntu_20260624090018_96d0cec3-e161-4c1f-8d09-69047ceef717
+Total jobs = 2
+Launching Job 1 out of 2
+Number of reduce tasks not specified. Estimated from input data size: 1
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapreduce.job.reduces=<number>
+Job running in-process (local Hadoop)
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+2026-06-24 09:00:20,470 Stage-1 map = 0%,  reduce = 0%
+2026-06-24 09:00:25,481 Stage-1 map = 100%,  reduce = 0%
+2026-06-24 09:00:26,484 Stage-1 map = 100%,  reduce = 100%
+Ended Job = job_local741842171_0001
+Launching Job 2 out of 2
+Number of reduce tasks determined at compile time: 1
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapreduce.job.reduces=<number>
+Job running in-process (local Hadoop)
+2026-06-24 09:00:27,660 Stage-2 map = 100%,  reduce = 100%
+Ended Job = job_local380675785_0002
+Moving data to directory hdfs://localhost:9000/user/hive/warehouse/flights_db.db/routes_100
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 51180204 HDFS Write: 0 SUCCESS
+Stage-Stage-2:  HDFS Read: 51180204 HDFS Write: 340518 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+Time taken: 9.635 seconds
+OK
+Time taken: 0.156 seconds

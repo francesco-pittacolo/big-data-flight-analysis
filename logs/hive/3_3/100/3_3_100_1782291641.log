@@ -1,0 +1,135 @@
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/home/ubuntu/apache-hive-2.3.9-bin/lib/log4j-slf4j-impl-2.6.2.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/home/ubuntu/hadoop-3.4.1/share/hadoop/common/lib/slf4j-reload4j-1.7.36.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+
+Logging initialized using configuration in jar:file:/home/ubuntu/apache-hive-2.3.9-bin/lib/hive-common-2.3.9.jar!/hive-log4j2.properties Async: true
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.hadoop.hive.common.StringInternUtils (file:/home/ubuntu/apache-hive-2.3.9-bin/lib/hive-common-2.3.9.jar) to field java.net.URI.string
+WARNING: Please consider reporting this to the maintainers of org.apache.hadoop.hive.common.StringInternUtils
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+OK
+Time taken: 2.013 seconds
+OK
+Time taken: 0.013 seconds
+OK
+Time taken: 0.037 seconds
+OK
+Time taken: 0.012 seconds
+OK
+Time taken: 0.011 seconds
+OK
+Time taken: 0.01 seconds
+OK
+Time taken: 0.293 seconds
+OK
+Time taken: 0.113 seconds
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ubuntu_20260624090047_1e5d57c9-ad0d-4758-b71e-71e9d6bd33d2
+Total jobs = 1
+Launching Job 1 out of 1
+Number of reduce tasks not specified. Estimated from input data size: 1
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapreduce.job.reduces=<number>
+Job running in-process (local Hadoop)
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+2026-06-24 09:00:49,271 Stage-1 map = 0%,  reduce = 0%
+2026-06-24 09:00:52,281 Stage-1 map = 100%,  reduce = 0%
+2026-06-24 09:00:53,284 Stage-1 map = 100%,  reduce = 100%
+Ended Job = job_local1137249874_0001
+Moving data to directory hdfs://localhost:9000/user/hive/warehouse/flights_db.db/airline_stats_100
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 53133922 HDFS Write: 50640 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+Time taken: 6.373 seconds
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ubuntu_20260624090053_f868fe00-998f-48b2-837f-0125eafd293a
+Total jobs = 1
+Launching Job 1 out of 1
+Number of reduce tasks not specified. Estimated from input data size: 1
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapreduce.job.reduces=<number>
+Job running in-process (local Hadoop)
+2026-06-24 09:00:54,742 Stage-1 map = 0%,  reduce = 0%
+2026-06-24 09:00:55,745 Stage-1 map = 100%,  reduce = 0%
+2026-06-24 09:00:56,747 Stage-1 map = 100%,  reduce = 100%
+Ended Job = job_local1519068964_0002
+Moving data to directory hdfs://localhost:9000/user/hive/warehouse/flights_db.db/airport_avg_100
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 87669598 HDFS Write: 104722 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+Time taken: 3.341 seconds
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ubuntu_20260624090056_232f3bc6-0645-465a-8a61-f7b1c844fdcd
+Total jobs = 1
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/home/ubuntu/apache-hive-2.3.9-bin/lib/log4j-slf4j-impl-2.6.2.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/home/ubuntu/hadoop-3.4.1/share/hadoop/common/lib/slf4j-reload4j-1.7.36.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.hadoop.hive.ql.exec.SerializationUtilities$ArraysAsListSerializer (file:/home/ubuntu/apache-hive-2.3.9-bin/lib/hive-exec-2.3.9.jar) to field java.util.Arrays$ArrayList.a
+WARNING: Please consider reporting this to the maintainers of org.apache.hadoop.hive.ql.exec.SerializationUtilities$ArraysAsListSerializer
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+2026-06-24 09:01:00	Starting to launch local task to process map join;	maximum memory = 268435456
+2026-06-24 09:01:00	Dump the side-table for tag: 1 with group count: 348 into file: file:/tmp/ubuntu/425c6f4c-f8d9-43f8-aa7e-914766fc3ce5/hive_2026-06-24_09-00-56_854_7245858387430890492-1/-local-10004/HashTable-Stage-4/MapJoin-mapfile01--.hashtable
+2026-06-24 09:01:00	Uploaded 1 File to: file:/tmp/ubuntu/425c6f4c-f8d9-43f8-aa7e-914766fc3ce5/hive_2026-06-24_09-00-56_854_7245858387430890492-1/-local-10004/HashTable-Stage-4/MapJoin-mapfile01--.hashtable (10750 bytes)
+2026-06-24 09:01:00	End of local task; Time Taken: 0.634 sec.
+Execution completed successfully
+MapredLocal task succeeded
+Launching Job 1 out of 1
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-06-24 09:01:02,696 Stage-4 map = 100%,  reduce = 0%
+Ended Job = job_local1348602556_0003
+Moving data to directory hdfs://localhost:9000/user/hive/warehouse/flights_db.db/joined_stats_100
+MapReduce Jobs Launched: 
+Stage-Stage-4:  HDFS Read: 43885435 HDFS Write: 114213 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+Time taken: 5.945 seconds
+OK
+Time taken: 0.029 seconds
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ubuntu_20260624090102_5afc26f3-e40e-479e-bae9-672a23ad6014
+Total jobs = 1
+Launching Job 1 out of 1
+Number of reduce tasks not specified. Estimated from input data size: 1
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapreduce.job.reduces=<number>
+Job running in-process (local Hadoop)
+2026-06-24 09:01:04,023 Stage-1 map = 100%,  reduce = 100%
+Ended Job = job_local78378508_0004
+Loading data to table flights_db.ranked_stats_100
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 87891132 HDFS Write: 291498 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+Time taken: 1.302 seconds
+OK
+Time taken: 0.037 seconds
+OK
+Time taken: 0.035 seconds
+OK
+Time taken: 0.033 seconds
+OK
+Time taken: 0.083 seconds
