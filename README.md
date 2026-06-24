@@ -11,6 +11,7 @@ Progetto di analisi Big Data su dati di voli (2024) tramite pipeline distribuite
 - [Struttura del progetto](#struttura-del-progetto)
 - [Dataset](#dataset)
 - [Preprocessing](#preprocessing)
+- [Analisi Implementate](#analisi-implementate)
 - [Analisi Spark](#analisi-spark)
 - [Analisi Hive](#analisi-hive)
 - [Output](#output)
@@ -37,9 +38,9 @@ pip install -r requirements.txt
 ### Tecnologie
 
 - Python 3.x
-- Java 8 o 11 (richiesto da Hadoop e Hive)
+- Java 11 (richiesto da Hadoop e Hive)
 - Apache Spark 3.5.8 / PySpark 3.5.8
-- Apache Hive (con metastore Derby in locale)
+- Apache Hive
 - Hadoop HDFS
 - AWS S3 + EMR (modalità cluster)
 
@@ -116,6 +117,10 @@ big-data-flight-analysis/
 
 ---
 
+
+
+---
+
 ## Preprocessing
 
 Lo script `preprocessing.py` legge il CSV grezzo, esegue la pulizia dei dati e produce versioni del dataset scalate in formato Parquet.
@@ -131,8 +136,6 @@ python src/preprocessing/preprocessing.py
 ```bash
 python src/preprocessing/preprocessing.py -c
 ```
-
----
 
 ### Path dataset pulito
 
@@ -159,18 +162,9 @@ s3a://big-data-2026-project/data/processed/flights_cleaned_<SIZE>.parquet
 
 ---
 
-## Analisi Spark
+## Analisi Implementate
 
-Ogni task è implementato in due varianti: **Spark Core** (RDD API) e **Spark SQL** (DataFrame + SQL), parametrizzate per taglia del dataset e modalità di esecuzione.
-
-### Prerequisito — Avviare HDFS
-
-Prima di eseguire qualsiasi job Spark in locale, avviare il filesystem distribuito:
-
-```bash
-$HADOOP_HOME/sbin/start-dfs.sh
-```
-
+Le analisi sono implementate sia in Apache Spark (Spark Core e Spark SQL) che in Apache Hive, e comprendono tre task:
 ### Task 3.1 — Statistiche delle compagnie aeree
 
 Per ogni compagnia aerea, genera le statistiche di ciascuna tratta o aeroporto di partenza servito: numero di voli, ritardo di arrivo minimo/massimo/medio, tasso di cancellazione ed elenco dei mesi in cui la compagnia opera su quella tratta.
@@ -182,6 +176,20 @@ Per ogni aeroporto di partenza e per ogni mese, produce un report con: il numero
 ### Task 3.3 — Ranking delle coppie compagnia-aeroporto con comportamento anomalo
 
 Per ogni coppia (aeroporto di partenza, compagnia aerea), confronta le performance della compagnia con la media di tutte le compagnie che operano nello stesso aeroporto. Il report include: numero di voli, ritardo medio in partenza e in arrivo, tasso di cancellazione, scarto rispetto alla media dell'aeroporto e posizione in classifica per ritardo medio in partenza (dalla migliore alla peggiore).
+
+---
+
+## Analisi Spark
+
+Ogni task è implementato in due varianti: **Spark Core** (RDD API) e **Spark SQL** (DataFrame + SQL), parametrizzate per taglia del dataset e modalità di esecuzione.
+
+### Prerequisito — Avviare HDFS
+
+Prima di eseguire qualsiasi job Spark in locale, avviare il filesystem distribuito:
+
+```bash
+$HADOOP_HOME/sbin/start-dfs.sh
+```
 
 ---
 
@@ -217,9 +225,10 @@ chmod +x run_spark.sh
 ./run_spark.sh -c -m spark_sql
 ```
 
+**Ulteriori informazioni**
 > Per eseguire solo un certo sottogruppo, editare le variabili `TASKS` e `SIZES` in `run_spark.sh`.
 
-**Singolo task (locale o cluster):** è possibile richiamare direttamente lo script Python corrispondente:
+Per eseguire una singola task è possibile richiamare direttamente lo script Python corrispondente:
 
 ```bash
 spark-submit src/analysis/spark/task_3_1/3_1_spark_core.py -s 100         # locale
@@ -365,7 +374,6 @@ python upload_to_s3/upload_all.py
 ```
 
 Il bucket di destinazione è `big-data-2026-project`.
-
 ## Spark History Server
 
 Per visualizzare l'interfaccia web con i dettagli delle esecuzioni Spark:
@@ -381,7 +389,6 @@ Accessibile su [http://localhost:18080](http://localhost:18080).
 ssh -i your_key.pem -L 18081:localhost:18080 hadoop@<master-node-address>
 ```
 Accessibile su [http://localhost:18081](http://localhost:18081).
-
 ## Relazione tecnica
 
 Nella root della repository è disponibile una relazione tecnica che descrive in dettaglio le scelte implementative, i risultati e le considerazioni sul progetto:
