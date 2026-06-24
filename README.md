@@ -252,7 +252,7 @@ LOCAL_HIVE_CMD="/home/ubuntu/apache-hive-2.3.9-bin/bin/hive"
 
 ### Prerequisito — Inizializzare il metastore
 
-Al primo utilizzo, inizializzare il metastore Derby dentro la cartella `/scripts` con il comando:
+Al primo utilizzo, bisogna entrare nella cartella `scripts` ed inizializzare il metastore Derby con il comando:
 
 ```bash
 schematool -dbType derby -initSchema
