@@ -45,7 +45,7 @@ INPUT_DIR="${BASE}/data/processed/flights_cleaned_${SIZE}.parquet"
 
 
 # LOG FILE
-LOG_FILE="${LOG_DIR}/${TASK}_size${SIZE}_$(date +%Y%m%d_%H%M%S).log"
+LOG_FILE="${LOG_DIR}/${TASK}_${SIZE}_$(date +%s).log"
 
 
 echo "============================================================="
