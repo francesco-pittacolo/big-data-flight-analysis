@@ -95,7 +95,14 @@ big-data-flight-analysis/
 │       ├── inspect_task_3_2.py        # Ispezione output Task 3.2
 │       ├── inspect_task_3_3.py        # Ispezione output Task 3.3
 │       └── inspect_job_outputs.py     # Utility generica per output jobs
-│
+│ 
+│ 
+├── plots/
+│   ├── generate_plots.py             # Generazione grafici delle performance
+│   ├── single/                       # Grafici singoli
+│   └── grouped/                      # Grafici aggregati
+│ 
+│ 
 ├── scripts/
 │   ├── run_spark.sh                   # Esegue job Spark (singolo task)
 │   ├── run_hive.sh                    # Esegue script Hive (singolo task)
@@ -319,6 +326,15 @@ python src/inspect/inspect_task_3_2.py
 python src/inspect/inspect_task_3_3.py
 ```
 
+## Visualizzazione dei risultati
+
+È disponibile uno script per generare automaticamente grafici comparativi dei tempi di esecuzione delle implementazioni Spark Core, Spark SQL e Hive sulle diverse configurazioni di esecuzione.
+
+### Esecuzione
+
+```bash
+python plots/generate_plots.py
+```
 ---
 
 ## Log
