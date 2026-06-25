@@ -10,9 +10,7 @@ parser.add_argument("-c", dest="cluster", action="store_true")
 parser.add_argument("-s", dest="size", type=str)
 args = parser.parse_args()
 
-# =============================================================
 # CONFIGURAZIONE
-# =============================================================
 BUCKET = "big-data-2026-project"
 
 
@@ -31,9 +29,9 @@ os.makedirs("/tmp/spark-events", exist_ok=True)
 spark = SparkSession.builder.appName(f"3_3_spark_sql_{SIZE}").config("spark.eventLog.enabled", "true").getOrCreate()
 
 start_time = time.perf_counter()
-# =========================================================
+
+
 # INPUT
-# =========================================================
 df = spark.read.parquet(
     f"{BASE}/data/processed/flights_cleaned_{SIZE}.parquet"
 ).select(
@@ -44,9 +42,7 @@ df = spark.read.parquet(
     "cancelled"
 )
 
-# =========================================================
 # 1. METRICHE PER (AEROPORTO, COMPAGNIA)
-# =========================================================
 airline_airport = df.groupBy(
     "origin", "op_unique_carrier"
 ).agg(
@@ -56,21 +52,16 @@ airline_airport = df.groupBy(
     F.round(F.avg("cancelled"), 4).alias("cancel_rate")
 )
 
-# =========================================================
 # 2. MEDIA AEROPORTO (BASELINE)
-# =========================================================
 airport_avg = df.groupBy("origin").agg(
     F.avg("dep_delay").alias("airport_avg_dep_delay")
 )
 
-# =========================================================
 # 3. JOIN
-# =========================================================
 df_join = airline_airport.join(airport_avg, "origin")
 
-# =========================================================
+
 # 4. DIFFERENZA RISPETTO MEDIA AEROPORTO
-# =========================================================
 df_join = df_join.withColumn(
     "dep_delay_diff",
     F.round(
@@ -79,9 +70,7 @@ df_join = df_join.withColumn(
     )
 )
 
-# =========================================================
 # 5. RANKING (migliore = minor ritardo medio)
-# =========================================================
 w = Window.partitionBy("origin").orderBy(F.asc("avg_dep_delay"))
 
 df_final = df_join.withColumn(
@@ -90,14 +79,10 @@ df_final = df_join.withColumn(
 ).drop("airport_avg_dep_delay")
 
 
-# =========================================================
 # 7. ORDINAMENTO FINALE
-# =========================================================
 df_final = df_final.orderBy("origin", "rank")
 
-# =========================================================
 # OUTPUT
-# =========================================================
 df_final.write.mode("overwrite").parquet(
     f"{BASE}/results/task_3_3/spark_sql/task_3_3_spark_sql_{SIZE}"
 )
