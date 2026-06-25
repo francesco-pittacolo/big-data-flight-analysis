@@ -62,6 +62,14 @@ Il dataset sorgente è `flight_data_2024.csv`, contenente dati di voli negli USA
 > **Il dataset non è incluso nella repository** a causa delle sue dimensioni (1.2 GB). Va scaricato manualmente da Kaggle e posizionato in `data/flight_data_2024.csv`:
 > [https://www.kaggle.com/datasets/hrishitpatil/flight-data-2024](https://www.kaggle.com/datasets/hrishitpatil/flight-data-2024)
 
+### Avviare HDFS
+
+Prima di eseguire qualsiasi job in locale, avviare il filesystem distribuito:
+
+```bash
+$HADOOP_HOME/sbin/start-dfs.sh
+```
+
 ---
 
 ## Struttura del progetto
@@ -189,14 +197,6 @@ Per ogni coppia (aeroporto di partenza, compagnia aerea), confronta le performan
 ## Analisi Spark
 
 Ogni task è implementato in due varianti: **Spark Core** (RDD API) e **Spark SQL** (DataFrame + SQL), parametrizzate per taglia del dataset e modalità di esecuzione.
-
-### Prerequisito — Avviare HDFS
-
-Prima di eseguire qualsiasi job Spark in locale, avviare il filesystem distribuito:
-
-```bash
-$HADOOP_HOME/sbin/start-dfs.sh
-```
 
 ---
 
